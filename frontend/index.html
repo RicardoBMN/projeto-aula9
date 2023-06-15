@@ -17,7 +17,7 @@
             var mensagem = $("#message").val();
             
             $.ajax({
-                url: "http://127.0.0.1:2002/insereMensagem",
+                url: "/insereMensagem",
                 type: "POST",
                 data: JSON.stringify({ mensagem: mensagem }),
                 contentType: "application/json; charset=utf-8",
