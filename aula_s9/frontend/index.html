@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="myForm">
+  <label for="message">Mensagem:</label><br>
+  <input type="text" id="message" name="message"><br>
+  <button type="submit">Confirmar</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#myForm").on("submit", function(e) {
+            e.preventDefault();
+
+            var mensagem = $("#message").val();
+            
+            $.ajax({
+                url: "http://127.0.0.1:2002/insereMensagem",
+                type: "POST",
+                data: JSON.stringify({ mensagem: mensagem }),
+                contentType: "application/json; charset=utf-8",
+                success: function(response) {
+                    alert("Mensagem inserida com sucesso!");
+                },
+                error: function(xhr, status, error) {
+                    alert("Erro ao inserir mensagem: " + error);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
