@@ -2,9 +2,9 @@
   "name": "projeto",
   "version": "1.0.0",
   "description": "Template de projeto",
-  "main": "backend/app.js",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/app.js"
+    "start": "node backend/server.js"
   },
   "author": "",
   "license": "MIT",
